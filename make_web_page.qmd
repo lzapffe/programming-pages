@@ -44,7 +44,9 @@ Congratulations, you have now created your first webpage and published it online
 
 The next steps now will be to customize your webpage. We will go over that in the next section.
 
-Moving onwards, you can create new pages and customize a lot. However, it is very important that you never change the name, move, or delete the _quarto.yml, index.qmd, and docs folder (if hosting the webpage on GitHub). You would also likely want the styles.css file to get the right layout of your pages.
+Moving onward, you can create new pages and customize a lot. However, it is very important that you never change the name, move, or delete the _quarto.yml, index.qmd, and docs folder (if hosting the webpage on GitHub). You would also likely want the styles.css file to get the right layout of your pages.
+
+One thing that is cool with your webpage, is that it will automatically update the layout to work on mobile phones, so you can create your layout the way you want it on the computer and then Quarto customize it again to work on a mobile phone as necessary.
 
 
 SOURCES:

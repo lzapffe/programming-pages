@@ -30,15 +30,20 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./pics/logo/Binary_code.png" rel="icon" type="image/png">
+<script src="site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2dfc5b5dca5b935fa29f815b5c136b9b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d6ca072a62b2cca0e3f858b3e39b526d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-b5ff14e04d8ae20a31edfa64545b4920.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,6 +71,44 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RDKZRGQ180"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-RDKZRGQ180', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"express",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<script>
+
+  window.addEventListener('load', function() {
+
+    document.getElementById("cc-nb-title").innerHTML = "My cookie banner title";
+
+    document.getElementById("cc-nb-text").innerHTML = "My cookie banner text";
+
+  });
+
+</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -99,6 +142,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -184,8 +228,16 @@ ul.task-list li input[type="checkbox"] {
 <p>To create the vertical navigation option, you add this text to your yml file under the website attribute: “sidebar: contents: - about.qmd - index.qmd”</p>
 <p>It is possible to have only one at a time or both together (which I will get back to later).</p>
 <p>In addition, there are many options to customize the navigation bars:</p>
-<p>In the _quarto.yml file, you can change the margin on the pages. Add ” page-layout: article” under “format and html”. By default (if you don’t specify page-layout), it will use article, which leaves about 7 cm of white space on the right side of the screen when you open each page. You can change it to full, which makes the text use all of the page. If you are like me, you would like something in-between, you can remove the page-layout option and instead add “grid:” with the suboption “margin-width: 100px”. The higher the number, the more white space you will get on the right side of the screen. You can also customize the size of the other sizes under the grid attribute, such as “sidebar-width” (the navigation bar on the side), “body-width” (the size of the area with your main text), and “gutter-width” (the size between each area, such as the navigation bar,the body of the text, and the table of contents).</p>
-<p>SOURCES - Customizing Rmarkdown documents - <a href="https://rstudio4edu.github.io/rstudio4edu-book/doc-dress.html">Link</a> - Customizing Quarto webpages - <a href="https://quarto.org/docs/websites/website-navigation.html#side-navigation">Link</a> - Introduction to creating a Quarto webpage, hosting it on GitHub, and customizing the page - <a href="https://ucsb-meds.github.io/creating-quarto-websites/">Link</a> - Instructions on customizing the layout of a Quarto document (or page) - <a href="https://quarto.org/docs/output-formats/page-layout.html">Link</a></p>
+<p>In the _quarto.yml file, you can change the margin on the pages. Add ” page-layout: article” under “format and html”. By default (if you don’t specify page-layout), it will use article, which leaves about 7 cm of white space on the right side of the screen when you open each page. You can change it to full, which makes the text use all of the page. If you are like me, you would like something in-between, you can remove the page-layout option and instead add “grid:” with the suboption “margin-width: 100px”. The higher the number, the more white space you will get on the right side of the screen. You can also customize the size of the other sizes under the grid attribute, such as “sidebar-width” (the navigation bar on the side), “body-width” (the size of the area with your main text), and “gutter-width” (the size between each area, such as the navigation bar,the body of the text, and the table of contents). If you start changing one of these options though, that will shift everything. So it is better to either just use “page-layout” or all of the four page options. This webpage uses the following values: ” grid: sidebar-width: 275px body-width: 2000px margin-width: 100px gutter-width: 1rem”</p>
+<p>Changing the title of the pages You can change the title of the qmd file in the yml header and this is then the title that will be displayed both in the navigation bar and on the webpage. If you for some reason want to display a different name in the navigation bar than on the page, you can change this in the navigation bar. So far, you have in your _quarto.yml document used a dash (-) and the file name to add to the navigation bar. If you want a different title, you can split an entry up and change for example “- about.qmd” to: “- text:”About” href: about.qmd”</p>
+<p>Changing the themes of the webpage Quarto has several built-in themes that you can use to change the colors and font of your webpage. You can see the built in options <a href="https://bootswatch.com/">here</a>. By default, Quarto uses Cosmo, but you can change that to any of the other themes. I have for example used the theme Flatly for this webpage. You can even have a webpage for light and one for dark mode. To do this, use the following code: “theme: light: flatly dark: darkly” This creates a toggle in your top nav bar where users can switch between dark and light mode.</p>
+<p>You might have noticed that Quarto chooses two themes by defualt: cosmo and brand. Brand is not a default theme, so I think this is an option to create your own customized options in a brand document that then gets linked. If you plan on doing this, you might want to keep the “brand”, if not, you can safely delete it. Here is further information about creating your own <a href="https://quarto.org/docs/authoring/brand.html">brand document</a>.</p>
+<p>Changing the themes of the webpage affects the color choices. If you have a top navigation bar (with tabs) this will for example by default go to the “light” option in your theme. Most of the themes are made to instead use the “primary” color, so you can change this the color of the nav bar to primary, or any other color in your theme, by adding “background: primary” under navbar in the _quarto.yml file.</p>
+<p>You can also change the color of the side bar with the same background option, but this can create some challenges with the margins being white, so it does typically look better to keep it as the same color as the background color.</p>
+<p>You can further customize the templates you are using by adding your own theme file, for example as “light: [flatly, theme.scss]”. The options to include in the scss file can easily be googled to further customize the page, for example with a different link color. I have just stuck with the theme, so I have not explored this further. If you are interested in doing these further customizations though, check out the <a href="https://quarto.org/docs/output-formats/html-themes.html">Quarto documentation page</a> and <a href="https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide">this course in advanced sutomization usin SASS</a>.</p>
+<p>Linking to other pages You can link to a different page on a page the same way you would link to a URL. You use square brackets around the text you want displayed over the link, then without any spaces, you have a parenthesis with the file name for the page you want to link to, such as about.qmd. You can see it in action <a href="./about.html">here</a>. If you have headings and sections formatted on the page, you can also link to that specific page by adding #section_name right after the file name. If I had for example had a section for “cv” on my about page, linking to that section would look like this “about.qmd#cv”.</p>
+<p>Create a web tab icon You can specify an icon that will be displayed in the tab of the webpage when people look at your webpage. To add this, you first need to get a png file with the icon or logo you want, preferrably with a transparent background. Then, save it in your project folder. I recommend making a separate folder for pictures, for example called “pics”. Then add the favicon attribute under webpages with the link to get from where your R project file is to the picture you want and the file name of the picture. In my case, it looks like the following: “website: favicon: pics/logo/Binary_code.png”</p>
+<p>SOURCES - Customizing Rmarkdown documents - <a href="https://rstudio4edu.github.io/rstudio4edu-book/doc-dress.html">Link</a> - Customizing Quarto webpages - <a href="https://quarto.org/docs/websites/website-navigation.html#side-navigation">Link</a> - Introduction to creating a Quarto webpage, hosting it on GitHub, and customizing the page - <a href="https://ucsb-meds.github.io/creating-quarto-websites/">Link</a> - Instructions on customizing the layout of a Quarto document (or page) - <a href="https://quarto.org/docs/output-formats/page-layout.html">Link</a> - Values for the page layout - <a href="https://forum.posit.co/t/how-to-control-the-left-and-right-empty-space-on-quarto-blog/169633/3">Link</a> - Overview of the built-in Quarto themes - <a href="https://bootswatch.com/">Link</a></p>
 
 
 
@@ -210,6 +262,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -608,6 +804,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
