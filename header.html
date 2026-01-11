@@ -1,6 +1,11 @@
+<!-- The following html document specifies a javascript code that changes
+the text of the cookie banner on the webpage. It is implemented in _quarto.yml.
+The code for the script comes from the user NicolasBoumal on GitHub.
+Link: https://github.com/orgs/quarto-dev/discussions/5958 -->
+
 <script>
   window.addEventListener('load', function() {
-    document.getElementById("cc-nb-title").innerHTML = "My cookie banner title";
-    document.getElementById("cc-nb-text").innerHTML = "My cookie banner text";
+    document.getElementById("cc-nb-title").innerHTML = "Cookie Consent";
+    document.getElementById("cc-nb-text").innerHTML = "This webpage uses cookies to collect statistics about how this webpage is used. Nothing on the webpage gets changed or customized to you and your IP address will be anonymized";
   });
 </script>
