@@ -2,8 +2,6 @@
 title: "About"
 ---
 
-About this site
-
-```{r}
-1 + 1
-```
+Next steps: I was going over the basic Quarto pages and customizing the layout of the page. I created a logo and added it to the tab when viewed in a browser, but I was trying to get ChatGPT to create a new version of if.
+I was also looking into getting the logo on the webpage itself.
+Lastly, I tried and failed getting Google Analytics to work with cookie consent.

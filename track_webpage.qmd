@@ -1,0 +1,75 @@
+---
+title: "Tracking Webpage Usage"
+---
+
+It is possible to track the visits to your webpage and how the users engage with the page. Getting this tracking one your webpage is relatively easy. There are however several laws in the EU with GDPR that sets several requirements for the handeling of this data that are harder to implement on the webpage. I have tried, but not found out exactly how to do it yet. The following page will therefore detail my journey so far and what I have learned. I will hopefully figure it out one day and update this page. In the meantime, it will just be a collection of my knowledge up until now. I also have not by any means a full overview of how to make something GDPR compliant, so this is not sufficient to make something GDPR compliant, you have to do some individual research or get help from someone more qualified than me for that.
+
+Getting the tracking of the webpage
+Google analytics is a free tool that allows you to track users on your webpage. It is very easy to set up. You just create an account on Google Analytics for your webpage and link it to your webpage. Then in the _quarto.yml file, you add the following:
+"website:
+  google-analytics:
+    tracking-id: "G-XXXXXXXXX""
+You get the tracking id from Google Analytics and this id will be individual for each of us.
+
+That is all you need to set up the tracking on your webpage. If you visit you page, you can now see that it registers you as a user and put up some statistics about it.
+
+
+Adding cookie consent
+One of the biggest challenges with getting the tracking to be GDPR compliant with Quarto is to ask for cookie consent and get Google Analytics to not collect information if the user does not consent.
+
+To add the banner asking for consent in Quarto, add the following to the _quarto.yml file:
+"website:
+  cookie-consent:
+    type: express"
+This cookie banner is however very standard and offer little flexibility. It does for example state that we use cookies to personalize ads, which is not the case for the current webpage.
+
+I saw someone write a javascript script to change out this text. That involves adding the following line to the _quarto.yml file:
+"format:
+  html:
+    include-in-header:
+      - file: header.html"
+
+and creating a header.html file with the following content:
+"<!-- The following html document specifies a javascript code that changes
+the text of the cookie banner on the webpage. It is implemented in _quarto.yml.
+The code for the script comes from the user NicolasBoumal on GitHub.
+Link: https://github.com/orgs/quarto-dev/discussions/5958 -->
+
+<script>
+  window.addEventListener('load', function() {
+    document.getElementById("cc-nb-title").innerHTML = "Cookie Consent";
+    document.getElementById("cc-nb-text").innerHTML = "This webpage uses cookies to collect statistics about how this webpage is used. Nothing on the webpage gets changed or customized to you and your IP address will be anonymized";
+  });
+</script>"
+
+and changing the cookie title and cookie text to what fits your webpage.
+
+
+After doing all of this, it looked like Google Analytics was collecting data whether I agreed or disagreed to the cookies, so I was unsure of whether it was working or not. My suspicion was that Google Analytics might not get the information about whether the cookies were agreed to or not from Quarto, and I am not sure how to fix that. I tried asking ChatGPT which got me to add the following file:
+"// Initialize Google Consent Mode with denied consent by default
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  wait_for_update: 500
+});
+
+// Update consent when the user accepts cookies
+document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("cookieconsent:accepted", function () {
+    gtag('consent', 'update', {
+      analytics_storage: 'granted'
+    });
+  });
+});"
+as consent.js and add that file to the _quarto.yml file like I did with header.html. However, after doing this (and trying some other things), it didn't look like Google Analytics was collecting any data anymore.
+
+I asked ChatGPT how to check whether things worked like it should and it said to open the page in incognito mode, open my webpage, and then the web developer tools. To then click on "Application" and look for the _ga tag which should be there when I consent, but not when I do not consent. Instead, I found the following message there "Cookie “_ga” has been rejected for invalid domain.". At this point, I am not sure what to do moving forward. I have also tried so many things, that I am not sure what created the problem to begin with. Therefore, I think the easiest the next time I am working on this is to just start over going over these steps and testing things as I go. Then if nothing else works, maybe ask someone. In the meantime, I have deleted all code and accounts that was created for this experiment, as I have all the information I need to recreate it from this file. Good luck!
+
+
+
+SOURCES:
+- Documentation on adding cookie banner and Google Analytics to Quarto - [Link](https://quarto.org/docs/websites/website-tools.html) and [Link](https://quarto.org/docs/reference/projects/websites.html)
+- Code for creating the javascript for changing the text on the cookie banner - [Link](https://github.com/orgs/quarto-dev/discussions/5958)

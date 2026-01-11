@@ -19,10 +19,8 @@ website:
          - make_web_page.qmd
          - add_pages.qmd
          - customize_webpage.qmd
-  google-analytics:
-    tracking-id: "G-RDKZRGQ180"
-  cookie-consent:
-    type: express
+         - track_webpage.qmd
+
 
 
 format:
@@ -37,8 +35,7 @@ format:
       body-width: 2000px
       margin-width: 100px
       gutter-width: 1rem
-    include-in-header:
-      file: header.html
+      
 
 
 
