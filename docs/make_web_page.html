@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>test-webpage – The Programming Pages</title>
+<title>Making the Webpage – The Programming Pages</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -123,7 +89,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -141,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">test-webpage</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./make_web_page.html">Creating your own web page</a></li><li class="breadcrumb-item"><a href="./make_web_page.html">Making the Webpage</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -164,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./make_web_page.html" class="sidebar-item-text sidebar-link">
+  <a href="./make_web_page.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Making the Webpage</span></a>
   </div>
 </li>
@@ -193,9 +159,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./make_web_page.html">Creating your own web page</a></li><li class="breadcrumb-item"><a href="./make_web_page.html">Making the Webpage</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">test-webpage</h1>
+<h1 class="title">Making the Webpage</h1>
 </div>
 
 
@@ -212,14 +178,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<p>The following page will detail how to make a webpage with Rstudio that is hosted online through Git Hub. The web page can then be visited by other people by using your URL, just like you are doing on this web page. The steps to set it up are relatively easy, but they do require a little bit of back and forth. Once you have created the webpage, it is easier to work on it. The first steps are therefore the most time consuming.</p>
+<p>In the following tutorial, I will use the following programs: - Rstudio - GitHub - Optional: Git terminal</p>
+<p>You can create a webpage just by using Quarto (or Rmarkdown). However, when you render your webpage, it will just be saved locally on your computer, so other people cannot access the webpage unless they also have all the files that you have. You have therefore then only created the internal structure of the webpage and not published it online. To get it online so that other people can access it, you have to save your work in a Git repository that is hosted on GitHub and then publish the pages through GitHub. Your webpage will then get an URL with the word github in it, as it is hosted on github.</p>
+<p>Creating a webpage in Quarto is very easy. Likewise, creating a Git repository is also very easy. Unfortunately, creating a webpage that is also a repository and getting them to talk to each other is more complicated. However, this guide will walk you through it, so just be patient with it and we will get there together.</p>
+<p>The first step is to make a Git repository. It is also possible to make the webpage first (which makes making the webpage easier, but that creates more steps in GitHub and as Rstudio is easier to understand and navigate than GitHub, I would rather take extra steps in Rstudio than in GitHub). If you however are dead set on creating the webpage first and then the repository, this link might be helpful: https://happygitwithr.com/existing-github-first. Personally, I saw others online indicating that it is easier to make the repository first, so I just deleted my R project and started with the repository.</p>
+<p>So, make the repository in GitHub first.</p>
+<p>Then, you want to add a R project to the repository in Rstudio. To do this, open Rstudio, create a new project, and chose “Version Control” and then “Git”. Then it asks you for the URL of the remote repository. You can get this by going to your repository in GitHub and clicking the green “Code” button. This will show you a link starting with https. Copy the link and paste it into the box in Rstudio. The name of the project will then automatically update to the name of your repository from the link. Then you chose where to save this project and the local repository in your files.</p>
+<p>Now, you have created a local repository. However, the new files (such as .gitignore and your r project file) are not included in your local repository by git yet, so you need to stage these files, commit them, and push them to the remote repository.</p>
+<p>Then you can start getting the internal structure of the webpage into your folder. There are two ways to do this, and I recommend the second one. 1. You can create the necessary files: _quatro.yml, about.qmd, index.qmd, styles.css, and _site. They do not have a lot of content, so this is not impossible to do 2. You can create a new R project (that you later delete) and choose “Quarto website” of the options. Then by using file explorer, you can copy the above mentioned files and folders and paste them into the R project for your webpage. Then you can delete the R project you just created to get the files, for example in file explorer. If you are planning on creating multiple webpages, you can save these files in a folder and copy these to the relevant R projects as you create webpages. Then you won’t have to always create a new temporary R project and delete it later.</p>
+<p>When you have the files in the R project, open _quarto.yml in Rstudio and find the top section that says: “project: type: website”</p>
+<p>add the line “output-dir: docs” so that it now says: “project: type: website output-dir: docs”</p>
+<p>We do this because your output files (html) that gets shown on your webpage are saved in the _site folder by Rstudio initially, but GitHub expects a folder called “Docs”, so we need to tell Rstudio to create the folder “Docs” and save the output pages there, so that GitHub will find them.</p>
+<p>After you have done all this, you can build your webpage. On the top right pane in Rstudio, you can see a tab called “Build”. Click on this tab and click on “Render Website”. It will take a litle bit and then a new window will open showing you the webpage you have so far. This is the local webpage, meaning that you have now made your webpage, but that it is not hosted online yet. Stage, commit, and push these changes now.</p>
+<p>The next step is then to host the webpage online. To do this, go to GitHub and your repository. Click on the “Settings” tab and scroll down to “Pages” on the left side. Where it says “None”, click on it and select “Main”. Then next to it, click on the scroll down menu and select “Docs”. Then click “Save” and wait for GitHub to create the webpage. This might take some time. When the webpage is created, you will see a green banner and the “Pages” page will also update to have your URL. If you click on the URL you can now see your webpage as hosted online. If you share this URL with others, they can now also see and access your webpage.</p>
+<p>Congratulations, you have now created your first webpage and published it online!</p>
+<p>The next steps now will be to customize your webpage. We will go over that in the next section.</p>
+<p>Moving onwards, you can create new pages and customize a lot. However, it is very important that you never change the name, move, or delete the _quarto.yml, index.qmd, and docs folder (if hosting the webpage on GitHub). You would also likely want the styles.css file to get the right layout of your pages.</p>
+<p>SOURCES: - Building the webpage manually in Rmarkdown instead of with Quarto - <a href="https://lisalendway.netlify.app/posts/2021-08-18-quicksite/">Link</a> - Introduction to creating a Quarto webpage, hosting it on GitHub, and customizing the page - <a href="https://ucsb-meds.github.io/creating-quarto-websites/">Link</a> - Quarto’s documentation on creating and customizing webpages - <a href="https://quarto.org/docs/websites/">Link</a> - How to connect the R project and GitHub if you create the R project first - <a href="https://happygitwithr.com/existing-github-last.html">Link</a> - Instructions on how to host the webpage on GitHub - <a href="https://github.com/DataScience4Psych/template_portfolio">Link</a></p>
 
 
 

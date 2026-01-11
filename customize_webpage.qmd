@@ -1,0 +1,41 @@
+---
+title: "Customizing the Webpage"
+---
+
+There are many things you can do to customize your webpage. Here we will go over some of them.
+
+The first thing is to customize the navigation bars. There are two types of navigation bars: horizontal and vertical.
+The horizontal navigation bars are the tabs you already see on your webpage. In addition, you can have vertical navigation bars, which are on the side.
+
+To create the tabs on the top, you add this text to your yml file under the website attribute:
+"navbar:
+    tools:
+        menu:
+          - about.qmd
+          - index.qmd"
+          
+To create the vertical navigation option, you add this text to your yml file under the website attribute:
+"sidebar:
+    contents:
+      - about.qmd
+      - index.qmd"
+      
+It is possible to have only one at a time or both together (which I will get back to later).
+
+In addition, there are many options to customize the navigation bars:
+
+
+
+
+
+
+
+In the _quarto.yml file, you can change the margin on the pages. Add "    page-layout: article" under "format and html". By default (if you don't specify page-layout), it will use article, which leaves about 7 cm of white space on the right side of the screen when you open each page. You can change it to full, which makes the text use all of the page. If you are like me, you would like something in-between, you can remove the page-layout option and instead add "grid:" with the suboption "margin-width: 100px". The higher the number, the more white space you will get on the right side of the screen. You can also customize the size of the other sizes under the grid attribute, such as "sidebar-width" (the navigation bar on the side), "body-width" (the size of the area with your main text), and "gutter-width" (the size between each area, such as the navigation bar,the body of the text, and the table of contents). 
+
+
+
+SOURCES
+- Customizing Rmarkdown documents - [Link](https://rstudio4edu.github.io/rstudio4edu-book/doc-dress.html)
+- Customizing Quarto webpages - [Link](https://quarto.org/docs/websites/website-navigation.html#side-navigation)
+- Introduction to creating a Quarto webpage, hosting it on GitHub, and customizing the page - [Link](https://ucsb-meds.github.io/creating-quarto-websites/)
+- Instructions on customizing the layout of a Quarto document (or page) - [Link](https://quarto.org/docs/output-formats/page-layout.html)

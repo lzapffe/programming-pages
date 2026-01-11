@@ -1,0 +1,13 @@
+---
+title: "Adding Pages"
+---
+
+Now that you have a web page, the next step is to add some pages to your web page. This can easily be done by creating a new quarto document (.qmd file). Add some text and the content you want to the page and save it.
+
+Then, to add the page to your webpage, you need to tell Quarto where you want the page featured. You can do this in the "_quarto.yml" file. Under "website", you can see that it already has the text:
+"navbar:
+  left:
+    - href: index.qmd
+      text: Home
+    - about.qmd"
+This text tells Quarto to make a navigation bar, which you can already see on your webpage at the top. There should be two tabs, one called "Home" and one called "About". The above code has added these two pages to the webpage, by mapping them to the navigation bar at the top, as its one tab. You can add another tab by adding another line under "about.qmd" on the same indent level and write "-", a space, and the name of the qmd file you created. If you now save the "_quarto.yml" file and render the website from the build tab, you will see that your page has appeared as another tab.

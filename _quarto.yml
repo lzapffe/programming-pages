@@ -3,12 +3,21 @@ project:
   output-dir: docs
 
 website:
-  title: "test-webpage"
+  title: "The Programming Pages"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+  sidebar:
+    style: "floating"
+    contents:
+      - section: "Creating your own web page"
+        contents:
+         - make_web_page.qmd
+         - add_pages.qmd
+         - customize_webpage.qmd
+
 
 format:
   html:
@@ -17,6 +26,11 @@ format:
       - brand
     css: styles.css
     toc: true
+    grid:
+      sidebar-width: 250px
+      body-width: 2000px
+      margin-width: 100px
+      gutter-width: 1rem
 
 
 

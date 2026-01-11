@@ -1,10 +1,27 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "test-webpage",
+    "objectID": "make_web_page.html",
+    "href": "make_web_page.html",
+    "title": "Making the Webpage",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "The following page will detail how to make a webpage with Rstudio that is hosted online through Git Hub. The web page can then be visited by other people by using your URL, just like you are doing on this web page. The steps to set it up are relatively easy, but they do require a little bit of back and forth. Once you have created the webpage, it is easier to work on it. The first steps are therefore the most time consuming.\nIn the following tutorial, I will use the following programs: - Rstudio - GitHub - Optional: Git terminal\nYou can create a webpage just by using Quarto (or Rmarkdown). However, when you render your webpage, it will just be saved locally on your computer, so other people cannot access the webpage unless they also have all the files that you have. You have therefore then only created the internal structure of the webpage and not published it online. To get it online so that other people can access it, you have to save your work in a Git repository that is hosted on GitHub and then publish the pages through GitHub. Your webpage will then get an URL with the word github in it, as it is hosted on github.\nCreating a webpage in Quarto is very easy. Likewise, creating a Git repository is also very easy. Unfortunately, creating a webpage that is also a repository and getting them to talk to each other is more complicated. However, this guide will walk you through it, so just be patient with it and we will get there together.\nThe first step is to make a Git repository. It is also possible to make the webpage first (which makes making the webpage easier, but that creates more steps in GitHub and as Rstudio is easier to understand and navigate than GitHub, I would rather take extra steps in Rstudio than in GitHub). If you however are dead set on creating the webpage first and then the repository, this link might be helpful: https://happygitwithr.com/existing-github-first. Personally, I saw others online indicating that it is easier to make the repository first, so I just deleted my R project and started with the repository.\nSo, make the repository in GitHub first.\nThen, you want to add a R project to the repository in Rstudio. To do this, open Rstudio, create a new project, and chose “Version Control” and then “Git”. Then it asks you for the URL of the remote repository. You can get this by going to your repository in GitHub and clicking the green “Code” button. This will show you a link starting with https. Copy the link and paste it into the box in Rstudio. The name of the project will then automatically update to the name of your repository from the link. Then you chose where to save this project and the local repository in your files.\nNow, you have created a local repository. However, the new files (such as .gitignore and your r project file) are not included in your local repository by git yet, so you need to stage these files, commit them, and push them to the remote repository.\nThen you can start getting the internal structure of the webpage into your folder. There are two ways to do this, and I recommend the second one. 1. You can create the necessary files: _quatro.yml, about.qmd, index.qmd, styles.css, and _site. They do not have a lot of content, so this is not impossible to do 2. You can create a new R project (that you later delete) and choose “Quarto website” of the options. Then by using file explorer, you can copy the above mentioned files and folders and paste them into the R project for your webpage. Then you can delete the R project you just created to get the files, for example in file explorer. If you are planning on creating multiple webpages, you can save these files in a folder and copy these to the relevant R projects as you create webpages. Then you won’t have to always create a new temporary R project and delete it later.\nWhen you have the files in the R project, open _quarto.yml in Rstudio and find the top section that says: “project: type: website”\nadd the line “output-dir: docs” so that it now says: “project: type: website output-dir: docs”\nWe do this because your output files (html) that gets shown on your webpage are saved in the _site folder by Rstudio initially, but GitHub expects a folder called “Docs”, so we need to tell Rstudio to create the folder “Docs” and save the output pages there, so that GitHub will find them.\nAfter you have done all this, you can build your webpage. On the top right pane in Rstudio, you can see a tab called “Build”. Click on this tab and click on “Render Website”. It will take a litle bit and then a new window will open showing you the webpage you have so far. This is the local webpage, meaning that you have now made your webpage, but that it is not hosted online yet. Stage, commit, and push these changes now.\nThe next step is then to host the webpage online. To do this, go to GitHub and your repository. Click on the “Settings” tab and scroll down to “Pages” on the left side. Where it says “None”, click on it and select “Main”. Then next to it, click on the scroll down menu and select “Docs”. Then click “Save” and wait for GitHub to create the webpage. This might take some time. When the webpage is created, you will see a green banner and the “Pages” page will also update to have your URL. If you click on the URL you can now see your webpage as hosted online. If you share this URL with others, they can now also see and access your webpage.\nCongratulations, you have now created your first webpage and published it online!\nThe next steps now will be to customize your webpage. We will go over that in the next section.\nMoving onwards, you can create new pages and customize a lot. However, it is very important that you never change the name, move, or delete the _quarto.yml, index.qmd, and docs folder (if hosting the webpage on GitHub). You would also likely want the styles.css file to get the right layout of your pages.\nSOURCES: - Building the webpage manually in Rmarkdown instead of with Quarto - Link - Introduction to creating a Quarto webpage, hosting it on GitHub, and customizing the page - Link - Quarto’s documentation on creating and customizing webpages - Link - How to connect the R project and GitHub if you create the R project first - Link - Instructions on how to host the webpage on GitHub - Link",
+    "crumbs": [
+      "Home",
+      "Creating your own web page",
+      "Making the Webpage"
+    ]
+  },
+  {
+    "objectID": "customize_webpage.html",
+    "href": "customize_webpage.html",
+    "title": "Customizing the Webpage",
+    "section": "",
+    "text": "There are many things you can do to customize your webpage. Here we will go over some of them.\nThe first thing is to customize the navigation bars. There are two types of navigation bars: horizontal and vertical. The horizontal navigation bars are the tabs you already see on your webpage. In addition, you can have vertical navigation bars, which are on the side.\nTo create the tabs on the top, you add this text to your yml file under the website attribute: “navbar: tools: menu: - about.qmd - index.qmd”\nTo create the vertical navigation option, you add this text to your yml file under the website attribute: “sidebar: contents: - about.qmd - index.qmd”\nIt is possible to have only one at a time or both together (which I will get back to later).\nIn addition, there are many options to customize the navigation bars:\nIn the _quarto.yml file, you can change the margin on the pages. Add ” page-layout: article” under “format and html”. By default (if you don’t specify page-layout), it will use article, which leaves about 7 cm of white space on the right side of the screen when you open each page. You can change it to full, which makes the text use all of the page. If you are like me, you would like something in-between, you can remove the page-layout option and instead add “grid:” with the suboption “margin-width: 100px”. The higher the number, the more white space you will get on the right side of the screen. You can also customize the size of the other sizes under the grid attribute, such as “sidebar-width” (the navigation bar on the side), “body-width” (the size of the area with your main text), and “gutter-width” (the size between each area, such as the navigation bar,the body of the text, and the table of contents).\nSOURCES - Customizing Rmarkdown documents - Link - Customizing Quarto webpages - Link - Introduction to creating a Quarto webpage, hosting it on GitHub, and customizing the page - Link - Instructions on customizing the layout of a Quarto document (or page) - Link",
+    "crumbs": [
+      "Home",
+      "Creating your own web page",
+      "Customizing the Webpage"
+    ]
   },
   {
     "objectID": "about.html",
@@ -12,5 +29,24 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "add_pages.html",
+    "href": "add_pages.html",
+    "title": "Adding Pages",
+    "section": "",
+    "text": "Now that you have a web page, the next step is to add some pages to your web page. This can easily be done by creating a new quarto document (.qmd file). Add some text and the content you want to the page and save it.\nThen, to add the page to your webpage, you need to tell Quarto where you want the page featured. You can do this in the “_quarto.yml” file. Under “website”, you can see that it already has the text: “navbar: left: - href: index.qmd text: Home - about.qmd” This text tells Quarto to make a navigation bar, which you can already see on your webpage at the top. There should be two tabs, one called “Home” and one called “About”. The above code has added these two pages to the webpage, by mapping them to the navigation bar at the top, as its one tab. You can add another tab by adding another line under “about.qmd” on the same indent level and write “-”, a space, and the name of the qmd file you created. If you now save the “_quarto.yml” file and render the website from the build tab, you will see that your page has appeared as another tab.",
+    "crumbs": [
+      "Home",
+      "Creating your own web page",
+      "Adding Pages"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "test-webpage",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
   }
 ]
