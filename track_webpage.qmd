@@ -35,12 +35,12 @@ the text of the cookie banner on the webpage. It is implemented in _quarto.yml.
 The code for the script comes from the user NicolasBoumal on GitHub.
 Link: https://github.com/orgs/quarto-dev/discussions/5958 -->
 
-<script>
+\<script\>
   window.addEventListener('load', function() {
     document.getElementById("cc-nb-title").innerHTML = "Cookie Consent";
     document.getElementById("cc-nb-text").innerHTML = "This webpage uses cookies to collect statistics about how this webpage is used. Nothing on the webpage gets changed or customized to you and your IP address will be anonymized";
   });
-</script>"
+\</script\>"
 
 and changing the cookie title and cookie text to what fits your webpage.
 
@@ -75,8 +75,8 @@ Now, I will instead try a different approach, which uses the open-source program
 First I created an account at https://www.goatcounter.com/ and provided my URL to my webpage.
 
 Then, I copied the JavaScript code that GoatCounter provides on my personal page:
-"<script data-goatcounter="https://USERNAME.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>"
+"\<script data-goatcounter="https://USERNAME.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"\>\</script\>"
 
 I created a new file in Rstudio where I pasted this code. I saved the file and called it "goatcounter.js".
 
