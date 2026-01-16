@@ -199,13 +199,7 @@ ul.task-list li input[type="checkbox"] {
 the text of the cookie banner on the webpage. It is implemented in _quarto.yml.
 The code for the script comes from the user NicolasBoumal on GitHub.
 Link: https://github.com/orgs/quarto-dev/discussions/5958 --></p>
-<script>
-  window.addEventListener('load', function() {
-    document.getElementById("cc-nb-title").innerHTML = "Cookie Consent";
-    document.getElementById("cc-nb-text").innerHTML = "This webpage uses cookies to collect statistics about how this webpage is used. Nothing on the webpage gets changed or customized to you and your IP address will be anonymized";
-  });
-</script>
-<p>”</p>
+<p>&lt;script&gt; window.addEventListener(‘load’, function() { document.getElementById(“cc-nb-title”).innerHTML = “Cookie Consent”; document.getElementById(“cc-nb-text”).innerHTML = “This webpage uses cookies to collect statistics about how this webpage is used. Nothing on the webpage gets changed or customized to you and your IP address will be anonymized”; }); &lt;/script&gt;”</p>
 <p>and changing the cookie title and cookie text to what fits your webpage.</p>
 <p>After doing all of this, it looked like Google Analytics was collecting data whether I agreed or disagreed to the cookies, so I was unsure of whether it was working or not. My suspicion was that Google Analytics might not get the information about whether the cookies were agreed to or not from Quarto, and I am not sure how to fix that. I tried asking ChatGPT which got me to add the following file: “// Initialize Google Consent Mode with denied consent by default window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}</p>
 <p>gtag(‘consent’, ‘default’, { analytics_storage: ‘denied’, ad_storage: ‘denied’, wait_for_update: 500 });</p>
@@ -213,9 +207,7 @@ Link: https://github.com/orgs/quarto-dev/discussions/5958 --></p>
 <p>I asked ChatGPT how to check whether things worked like it should and it said to open the page in incognito mode, open my webpage, and then the web developer tools. To then click on “Application” and look for the _ga tag which should be there when I consent, but not when I do not consent. Instead, I found the following message there “Cookie “_ga” has been rejected for invalid domain.”. At this point, I am not sure what to do moving forward. I have also tried so many things, that I am not sure what created the problem to begin with. Therefore, I think the easiest the next time I am working on this is to just start over going over these steps and testing things as I go. Then if nothing else works, maybe ask someone. In the meantime, I have deleted all code and accounts that was created for this experiment, as I have all the information I need to recreate it from this file. Good luck!</p>
 <p>SECOND TRY: Now, I will instead try a different approach, which uses the open-source program GoatCounter instead of Google Analytics. GoatCounter provides less information than Google Analytics, but requires less work to implement with in a GDPR approved way. This is because it does not use cookies or any ther ways of storing personal data. That also means that you do not get detailed information about what each person does on the webpage. However, GoatCounter does provide information about the number of visits on the webpage, which is enough for my uses.</p>
 <p>First I created an account at https://www.goatcounter.com/ and provided my URL to my webpage.</p>
-Then, I copied the JavaScript code that GoatCounter provides on my personal page: “
-<script data-goatcounter="https://USERNAME.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
-<p>”</p>
+<p>Then, I copied the JavaScript code that GoatCounter provides on my personal page: “&lt;script data-goatcounter=”https://USERNAME.goatcounter.com/count” async src=“//gc.zgo.at/count.js”&gt;&lt;/script&gt;”</p>
 <p>I created a new file in Rstudio where I pasted this code. I saved the file and called it “goatcounter.js”.</p>
 <p>Then, I added the following line to the _quarto.yml file with the following code in the YML format: html: include-in-header: - file: goatcounter.js</p>
 <p>Then I saved the changes and rendered them.</p>
