@@ -36,7 +36,7 @@ format:
       margin-width: 100px
       gutter-width: 1rem
     include-in-header:
-      - "goatcounter.js"
+      - file: goatcounter.js
       
 
 

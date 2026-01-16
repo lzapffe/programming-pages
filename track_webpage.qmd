@@ -84,7 +84,7 @@ Then, I added the following line to the _quarto.yml file with the following code
 format:
   html:
     include-in-header:
-      - "goatcounter.js"
+      - file: goatcounter.js
 
 Then I saved the changes and rendered them.
 
