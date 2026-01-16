@@ -74,10 +74,17 @@ Now, I will instead try a different approach, which uses the open-source program
 
 First I created an account at https://www.goatcounter.com/ and provided my URL to my webpage.
 
-Then, I took the URL embeded in the JavaScript code that GoatCounter provides on my personal page. I added this to the _quarto.yml file with the following code in the YML
-website:
-  analytics:
-    goatcounter: https://USERNAME.goatcounter.com/count
+Then, I copied the JavaScript code that GoatCounter provides on my personal page:
+"<script data-goatcounter="https://USERNAME.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>"
+
+I created a new file in Rstudio where I pasted this code. I saved the file and called it "goatcounter.js".
+
+Then, I added the following line to the _quarto.yml file with the following code in the YML
+format:
+  html:
+    include-in-header:
+      - "goatcounter.js"
 
 Then I saved the changes and rendered them.
 
