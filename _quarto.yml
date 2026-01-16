@@ -5,6 +5,8 @@ project:
 website:
   title: "The Programming Pages"
   favicon: pics/logo/Binary_code.png
+  analytics:
+    goatcounter: https://lzapffe.goatcounter.com/count
   navbar:
     left:
       - href: index.qmd
