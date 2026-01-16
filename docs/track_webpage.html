@@ -69,6 +69,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script data-goatcounter="https://lzapffe.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -210,7 +211,15 @@ Link: https://github.com/orgs/quarto-dev/discussions/5958 --></p>
 <p>gtag(‘consent’, ‘default’, { analytics_storage: ‘denied’, ad_storage: ‘denied’, wait_for_update: 500 });</p>
 <p>// Update consent when the user accepts cookies document.addEventListener(“DOMContentLoaded”, function () { document.addEventListener(“cookieconsent:accepted”, function () { gtag(‘consent’, ‘update’, { analytics_storage: ‘granted’ }); }); });” as consent.js and add that file to the _quarto.yml file like I did with header.html. However, after doing this (and trying some other things), it didn’t look like Google Analytics was collecting any data anymore.</p>
 <p>I asked ChatGPT how to check whether things worked like it should and it said to open the page in incognito mode, open my webpage, and then the web developer tools. To then click on “Application” and look for the _ga tag which should be there when I consent, but not when I do not consent. Instead, I found the following message there “Cookie “_ga” has been rejected for invalid domain.”. At this point, I am not sure what to do moving forward. I have also tried so many things, that I am not sure what created the problem to begin with. Therefore, I think the easiest the next time I am working on this is to just start over going over these steps and testing things as I go. Then if nothing else works, maybe ask someone. In the meantime, I have deleted all code and accounts that was created for this experiment, as I have all the information I need to recreate it from this file. Good luck!</p>
-<p>SOURCES: - Documentation on adding cookie banner and Google Analytics to Quarto - <a href="https://quarto.org/docs/websites/website-tools.html">Link</a> and <a href="https://quarto.org/docs/reference/projects/websites.html">Link</a> - Code for creating the javascript for changing the text on the cookie banner - <a href="https://github.com/orgs/quarto-dev/discussions/5958">Link</a></p>
+<p>SECOND TRY: Now, I will instead try a different approach, which uses the open-source program GoatCounter instead of Google Analytics. GoatCounter provides less information than Google Analytics, but requires less work to implement with in a GDPR approved way. This is because it does not use cookies or any ther ways of storing personal data. That also means that you do not get detailed information about what each person does on the webpage. However, GoatCounter does provide information about the number of visits on the webpage, which is enough for my uses.</p>
+<p>First I created an account at https://www.goatcounter.com/ and provided my URL to my webpage.</p>
+Then, I copied the JavaScript code that GoatCounter provides on my personal page: “
+<script data-goatcounter="https://USERNAME.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
+<p>”</p>
+<p>I created a new file in Rstudio where I pasted this code. I saved the file and called it “goatcounter.js”.</p>
+<p>Then, I added the following line to the _quarto.yml file with the following code in the YML format: html: include-in-header: - file: goatcounter.js</p>
+<p>Then I saved the changes and rendered them.</p>
+<p>SOURCES: - Documentation on adding cookie banner and Google Analytics to Quarto - <a href="https://quarto.org/docs/websites/website-tools.html">Link</a> and <a href="https://quarto.org/docs/reference/projects/websites.html">Link</a> - Code for creating the javascript for changing the text on the cookie banner - <a href="https://github.com/orgs/quarto-dev/discussions/5958">Link</a> - GoatCounter - <a href="https://www.goatcounter.com/">Link</a></p>
 
 
 
