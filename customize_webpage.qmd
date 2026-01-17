@@ -23,6 +23,15 @@ To create the vertical navigation option, you add this text to your yml file und
 It is possible to have only one at a time or both together (which I will get back to later).
 
 In addition, there are many options to customize the navigation bars:
+- You can add items under "left" or "right" under "navbar" to specify on which side of the navbar it should be built
+- You can add headers without a link, just some text by just using the "text" attribute and no "href". This could for example be "text: Heading 1" or just "text: ------" to create a separation bar
+- It is possible to make many more customizations by defining the navbar in html code instead of in the yml header. This does however require writing out more manually and can be harder to figure out. Here is an example of a [navbar written in html](https://github.com/rstudio/rmarkdown-website/blob/master/_navbar.html).
+- If you do not want your title displayed in the navbar, you can add "title: false" under navbar and it will not just use the site name as default, but rather leave it blank
+- "logo" allows you to add a logo to the navbar
+  - "logo-alt" provides the alternative text for the logo for individuals who are using a program reading the visuals out loud
+- 
+
+
 
 
 
@@ -83,3 +92,4 @@ SOURCES
 - Instructions on customizing the layout of a Quarto document (or page) - [Link](https://quarto.org/docs/output-formats/page-layout.html)
 - Values for the page layout - [Link](https://forum.posit.co/t/how-to-control-the-left-and-right-empty-space-on-quarto-blog/169633/3)
 - Overview of the built-in Quarto themes - [Link](https://bootswatch.com/)
+- Overview of some Quarto webpage customizations, such as navbars - [Link](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html)

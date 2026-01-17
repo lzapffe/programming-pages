@@ -86,7 +86,15 @@ format:
     include-in-header:
       - file: goatcounter.js
 
-Then I saved the changes and rendered them.
+Then I saved the changes,  rendered, and pushed them.
+
+Now, you can go onto your webpage and click on a few things. Make sure that the page is updated, for example by looking at a page you changed the text to. Then go back to the main page on your profile for GoatCounter's webpage and the banner stating that you have no views yet should be gone and replaced with some graphs showing number of visitations to your webpage.
+
+Now, there is an option on GoatCounter to exclude the visits by your IP address to your webpage. You can do this by clicking "Settings" on GoatCounter and then scroll down to "Tracking" and "Ignore IPs". Click on the "Add your current IP" link and some numbers and dots will appear in the open text field. Scroll down and click on "Save" to save these changes.
+
+Then you can go to your webpage around, click around the links a little bit and make sure that GoatCounter does not count your activity.
+
+If you want to also exclude GoatCounter from countin visits to the webpage from your phone, you can add that IP address too. Google how to find your IP address on your phone (Iphone, android, etc) and follow the instructions. In my case, with an android, I have to go to XXXXXXXXX
 
 
 

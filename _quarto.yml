@@ -14,12 +14,19 @@ website:
   sidebar:
     style: "floating"
     contents:
+      - section: "Rmarkdown"
+        contents:
+          - rmarkdown_basics.qmd
       - section: "Creating your own web page"
         contents:
          - make_web_page.qmd
          - add_pages.qmd
          - customize_webpage.qmd
          - track_webpage.qmd
+         - troubleshooting.qmd
+      - section: "Miscallenous"
+        contents:
+          - cool_things.qmd
 
 
 

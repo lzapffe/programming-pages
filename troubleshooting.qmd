@@ -1,0 +1,17 @@
+---
+title: "Troubleshooting Problems"
+---
+
+Here is a list of some of the problems I have run into with my webpage and how to troubleshoot them:
+
+1. The webpage does not update
+
+There are several potential things that can have gone wrong, make sure you have done the following:
+1. Saved your changes in Rstudio
+  If the file name in the tab for an opened file is red in Rstudio with a start after it, that means that the file is not saved and you have to save it with the floppydisc icon
+2. Rendered your webpage
+  Rendering the webpage updates your files in the docs folder. If you are unsure of whether you rendered your pages, look for a recent change you did to a webpage Quarto document in the docs folder. If you do not see the changes you have made there, try rendering the webpage again by clicking on the "Render Website" page under the "Build" tab in Rstudio
+3. Comited and pushed your changes to GitHub
+  See whether you can see the updates on GitHub. You can for example look for a file you know you edited and see how long it is since the last comit involving that file on the right side of the file
+4. Waited a little bit to give the webpage time to update
+  Unfortunately, it takes some time for the webpage to update. Exactly how long varies from a minute to several minutes. I have experienced that it took almost 10 minutes once, and that one page got updated several minutes before the other, but I might have done something weird for that to happen

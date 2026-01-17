@@ -1,0 +1,8 @@
+---
+title: "Rmarkdown"
+---
+
+This should be a general page for using Rmarkdown, but for now, I will also list interesting things to add more subpages about.
+
+Interesting things to add more subpages about:
+- [Parameterized reports](https://bookdown.org/yihui/rmarkdown/parameterized-reports.html)

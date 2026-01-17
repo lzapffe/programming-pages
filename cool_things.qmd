@@ -1,0 +1,9 @@
+---
+title: "Cool Things to Check Out for Later"
+---
+
+There are endless opportunities of things to discover and learn with programming. The following section lists some of the interesting things I have seen that I would like to learn more about or that I did maybe not fit in anywhere else on my page.
+
+
+1. The package learnr to make interactive documents to teach R programming or other concepts. You can for example have them code within the document. See their webpage and especially their example "Summarizing data". [Link](https://rstudio.github.io/learnr/). There is also an e-book with some [instructions on learnr](https://bookdown.org/yihui/rmarkdown/learnr-start.html)
+2. Shiny documents. This is from an [ebook on Rmarkdown](https://bookdown.org/yihui/rmarkdown/shiny-documents.html). This is an [intro course in building shiny apps](https://ucsb-meds.github.io/EDS-296-Intro-to-Shiny/)

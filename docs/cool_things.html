@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tracking Webpage Usage – The Programming Pages</title>
+<title>Cool Things to Check Out for Later – The Programming Pages</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -112,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./make_web_page.html">Creating your own web page</a></li><li class="breadcrumb-item"><a href="./track_webpage.html">Tracking Webpage Usage</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cool_things.html">Miscallenous</a></li><li class="breadcrumb-item"><a href="./cool_things.html">Cool Things to Check Out for Later</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -170,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./track_webpage.html" class="sidebar-item-text sidebar-link active">
+  <a href="./track_webpage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tracking Webpage Usage</span></a>
   </div>
 </li>
@@ -193,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cool_things.html" class="sidebar-item-text sidebar-link">
+  <a href="./cool_things.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Cool Things to Check Out for Later</span></a>
   </div>
 </li>
@@ -210,9 +210,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./make_web_page.html">Creating your own web page</a></li><li class="breadcrumb-item"><a href="./track_webpage.html">Tracking Webpage Usage</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cool_things.html">Miscallenous</a></li><li class="breadcrumb-item"><a href="./cool_things.html">Cool Things to Check Out for Later</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Tracking Webpage Usage</h1>
+<h1 class="title">Cool Things to Check Out for Later</h1>
 </div>
 
 
@@ -229,33 +229,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>It is possible to track the visits to your webpage and how the users engage with the page. Getting this tracking one your webpage is relatively easy. There are however several laws in the EU with GDPR that sets several requirements for the handeling of this data that are harder to implement on the webpage. I have tried, but not found out exactly how to do it yet. The following page will therefore detail my journey so far and what I have learned. I will hopefully figure it out one day and update this page. In the meantime, it will just be a collection of my knowledge up until now. I also have not by any means a full overview of how to make something GDPR compliant, so this is not sufficient to make something GDPR compliant, you have to do some individual research or get help from someone more qualified than me for that.</p>
-<p>Getting the tracking of the webpage Google analytics is a free tool that allows you to track users on your webpage. It is very easy to set up. You just create an account on Google Analytics for your webpage and link it to your webpage. Then in the _quarto.yml file, you add the following: “website: google-analytics: tracking-id:”G-XXXXXXXXX”” You get the tracking id from Google Analytics and this id will be individual for each of us.</p>
-<p>That is all you need to set up the tracking on your webpage. If you visit you page, you can now see that it registers you as a user and put up some statistics about it.</p>
-<p>Adding cookie consent One of the biggest challenges with getting the tracking to be GDPR compliant with Quarto is to ask for cookie consent and get Google Analytics to not collect information if the user does not consent.</p>
-<p>To add the banner asking for consent in Quarto, add the following to the _quarto.yml file: “website: cookie-consent: type: express” This cookie banner is however very standard and offer little flexibility. It does for example state that we use cookies to personalize ads, which is not the case for the current webpage.</p>
-<p>I saw someone write a javascript script to change out this text. That involves adding the following line to the _quarto.yml file: “format: html: include-in-header: - file: header.html”</p>
-<p>and creating a header.html file with the following content: “<!-- The following html document specifies a javascript code that changes
-the text of the cookie banner on the webpage. It is implemented in _quarto.yml.
-The code for the script comes from the user NicolasBoumal on GitHub.
-Link: https://github.com/orgs/quarto-dev/discussions/5958 --></p>
-<p>&lt;script&gt; window.addEventListener(‘load’, function() { document.getElementById(“cc-nb-title”).innerHTML = “Cookie Consent”; document.getElementById(“cc-nb-text”).innerHTML = “This webpage uses cookies to collect statistics about how this webpage is used. Nothing on the webpage gets changed or customized to you and your IP address will be anonymized”; }); &lt;/script&gt;”</p>
-<p>and changing the cookie title and cookie text to what fits your webpage.</p>
-<p>After doing all of this, it looked like Google Analytics was collecting data whether I agreed or disagreed to the cookies, so I was unsure of whether it was working or not. My suspicion was that Google Analytics might not get the information about whether the cookies were agreed to or not from Quarto, and I am not sure how to fix that. I tried asking ChatGPT which got me to add the following file: “// Initialize Google Consent Mode with denied consent by default window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}</p>
-<p>gtag(‘consent’, ‘default’, { analytics_storage: ‘denied’, ad_storage: ‘denied’, wait_for_update: 500 });</p>
-<p>// Update consent when the user accepts cookies document.addEventListener(“DOMContentLoaded”, function () { document.addEventListener(“cookieconsent:accepted”, function () { gtag(‘consent’, ‘update’, { analytics_storage: ‘granted’ }); }); });” as consent.js and add that file to the _quarto.yml file like I did with header.html. However, after doing this (and trying some other things), it didn’t look like Google Analytics was collecting any data anymore.</p>
-<p>I asked ChatGPT how to check whether things worked like it should and it said to open the page in incognito mode, open my webpage, and then the web developer tools. To then click on “Application” and look for the _ga tag which should be there when I consent, but not when I do not consent. Instead, I found the following message there “Cookie “_ga” has been rejected for invalid domain.”. At this point, I am not sure what to do moving forward. I have also tried so many things, that I am not sure what created the problem to begin with. Therefore, I think the easiest the next time I am working on this is to just start over going over these steps and testing things as I go. Then if nothing else works, maybe ask someone. In the meantime, I have deleted all code and accounts that was created for this experiment, as I have all the information I need to recreate it from this file. Good luck!</p>
-<p>SECOND TRY: Now, I will instead try a different approach, which uses the open-source program GoatCounter instead of Google Analytics. GoatCounter provides less information than Google Analytics, but requires less work to implement with in a GDPR approved way. This is because it does not use cookies or any ther ways of storing personal data. That also means that you do not get detailed information about what each person does on the webpage. However, GoatCounter does provide information about the number of visits on the webpage, which is enough for my uses.</p>
-<p>First I created an account at https://www.goatcounter.com/ and provided my URL to my webpage.</p>
-<p>Then, I copied the JavaScript code that GoatCounter provides on my personal page: “&lt;script data-goatcounter=”https://USERNAME.goatcounter.com/count” async src=“//gc.zgo.at/count.js”&gt;&lt;/script&gt;”</p>
-<p>I created a new file in Rstudio where I pasted this code. I saved the file and called it “goatcounter.js”.</p>
-<p>Then, I added the following line to the _quarto.yml file with the following code in the YML format: html: include-in-header: - file: goatcounter.js</p>
-<p>Then I saved the changes, rendered, and pushed them.</p>
-<p>Now, you can go onto your webpage and click on a few things. Make sure that the page is updated, for example by looking at a page you changed the text to. Then go back to the main page on your profile for GoatCounter’s webpage and the banner stating that you have no views yet should be gone and replaced with some graphs showing number of visitations to your webpage.</p>
-<p>Now, there is an option on GoatCounter to exclude the visits by your IP address to your webpage. You can do this by clicking “Settings” on GoatCounter and then scroll down to “Tracking” and “Ignore IPs”. Click on the “Add your current IP” link and some numbers and dots will appear in the open text field. Scroll down and click on “Save” to save these changes.</p>
-<p>Then you can go to your webpage around, click around the links a little bit and make sure that GoatCounter does not count your activity.</p>
-<p>If you want to also exclude GoatCounter from countin visits to the webpage from your phone, you can add that IP address too. Google how to find your IP address on your phone (Iphone, android, etc) and follow the instructions. In my case, with an android, I have to go to XXXXXXXXX</p>
-<p>SOURCES: - Documentation on adding cookie banner and Google Analytics to Quarto - <a href="https://quarto.org/docs/websites/website-tools.html">Link</a> and <a href="https://quarto.org/docs/reference/projects/websites.html">Link</a> - Code for creating the javascript for changing the text on the cookie banner - <a href="https://github.com/orgs/quarto-dev/discussions/5958">Link</a> - GoatCounter - <a href="https://www.goatcounter.com/">Link</a></p>
+<p>There are endless opportunities of things to discover and learn with programming. The following section lists some of the interesting things I have seen that I would like to learn more about or that I did maybe not fit in anywhere else on my page.</p>
+<ol type="1">
+<li>The package learnr to make interactive documents to teach R programming or other concepts. You can for example have them code within the document. See their webpage and especially their example “Summarizing data”. <a href="https://rstudio.github.io/learnr/">Link</a>. There is also an e-book with some <a href="https://bookdown.org/yihui/rmarkdown/learnr-start.html">instructions on learnr</a></li>
+<li>Shiny documents. This is from an <a href="https://bookdown.org/yihui/rmarkdown/shiny-documents.html">ebook on Rmarkdown</a>. This is an <a href="https://ucsb-meds.github.io/EDS-296-Intro-to-Shiny/">intro course in building shiny apps</a></li>
+</ol>
 
 
 
