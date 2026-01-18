@@ -29,7 +29,11 @@ In addition, there are many options to customize the navigation bars:
 - If you do not want your title displayed in the navbar, you can add "title: false" under navbar and it will not just use the site name as default, but rather leave it blank
 - "logo" allows you to add a logo to the navbar
   - "logo-alt" provides the alternative text for the logo for individuals who are using a program reading the visuals out loud
-- 
+- You can change the backgroun color of the navigation bar with "background", which can be set to “primary”, “secondary”, “success”, “danger”, “warning”, “info”, “light”, “dark”, or hex color. The color associated with these attributes depend on the colors used by your template. Check the colors of your theme [here](https://bootswatch.com/).
+- "foreground" colors the navigation bar items, texts, and links
+- "search" includes a search bar, with values as "false" or "true"
+- "tools" can add buttons or other choices to navigate to sites (e.g. social media). If you turned on dark and light mode, the button for that will have appeared as a tool. Tools always show up on the right side of the navigation bar.
+  - Many of the tools have an icon, which you can add with "icon" by specifying for example on of the icons from Bootstrap. Then you also want to add "href" with the link to be added to the icon. You can also create a pull-down menu from your icon, by adding an icon and a "menu" instead of the "href". Then under "menu", you can add "href" and "text" for additional links to add. However, note that the positioning of tools is not always good. I made a pull-down bar where part of the text went out of the page. This probably mean that the code for tools is not as well-made as the code for other attributes as "left" and "right". I therefore suggest using "right" instead of "tools" always, to get around this problem. Everything is the same, just with "right" instead of "tools".
 
 
 

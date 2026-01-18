@@ -94,7 +94,8 @@ Now, there is an option on GoatCounter to exclude the visits by your IP address 
 
 Then you can go to your webpage around, click around the links a little bit and make sure that GoatCounter does not count your activity.
 
-If you want to also exclude GoatCounter from countin visits to the webpage from your phone, you can add that IP address too. Google how to find your IP address on your phone (Iphone, android, etc) and follow the instructions. In my case, with an android, I have to go to XXXXXXXXX
+If you want to also exclude GoatCounter from counting visits to the webpage from your phone, you can add that IP address too. Google how to find your IP address on your phone (Iphone, android, etc) and follow the instructions. In my case, with an android, I have to go to "Settings", "About phone", and scroll down to a section called "IP address". I am not so sure entering that IP address actually worked though.
+However, note that GoatCounter will not manage to exclude the vists you make from your computer if you use a VPN.
 
 
 

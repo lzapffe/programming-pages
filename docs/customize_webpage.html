@@ -101,6 +101,30 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-github">    
+        <li>
+    <a class="dropdown-item" href="https://github.com/lzapffe/programming-pages">
+ <span class="dropdown-text">GitHub repository</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/lzapffe/programming-pages/issues">
+ <span class="dropdown-text">Suggest improvements</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./contact.html"><i class="bi bi-chat-text" role="img">
+</i> 
+ <span class="dropdown-text">Contact me</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -234,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
 <p>To create the tabs on the top, you add this text to your yml file under the website attribute: “navbar: tools: menu: - about.qmd - index.qmd”</p>
 <p>To create the vertical navigation option, you add this text to your yml file under the website attribute: “sidebar: contents: - about.qmd - index.qmd”</p>
 <p>It is possible to have only one at a time or both together (which I will get back to later).</p>
-<p>In addition, there are many options to customize the navigation bars: - You can add items under “left” or “right” under “navbar” to specify on which side of the navbar it should be built - You can add headers without a link, just some text by just using the “text” attribute and no “href”. This could for example be “text: Heading 1” or just “text: ——” to create a separation bar - It is possible to make many more customizations by defining the navbar in html code instead of in the yml header. This does however require writing out more manually and can be harder to figure out. Here is an example of a <a href="https://github.com/rstudio/rmarkdown-website/blob/master/_navbar.html">navbar written in html</a>. - If you do not want your title displayed in the navbar, you can add “title: false” under navbar and it will not just use the site name as default, but rather leave it blank - “logo” allows you to add a logo to the navbar - “logo-alt” provides the alternative text for the logo for individuals who are using a program reading the visuals out loud -</p>
+<p>In addition, there are many options to customize the navigation bars: - You can add items under “left” or “right” under “navbar” to specify on which side of the navbar it should be built - You can add headers without a link, just some text by just using the “text” attribute and no “href”. This could for example be “text: Heading 1” or just “text: ——” to create a separation bar - It is possible to make many more customizations by defining the navbar in html code instead of in the yml header. This does however require writing out more manually and can be harder to figure out. Here is an example of a <a href="https://github.com/rstudio/rmarkdown-website/blob/master/_navbar.html">navbar written in html</a>. - If you do not want your title displayed in the navbar, you can add “title: false” under navbar and it will not just use the site name as default, but rather leave it blank - “logo” allows you to add a logo to the navbar - “logo-alt” provides the alternative text for the logo for individuals who are using a program reading the visuals out loud - You can change the backgroun color of the navigation bar with “background”, which can be set to “primary”, “secondary”, “success”, “danger”, “warning”, “info”, “light”, “dark”, or hex color. The color associated with these attributes depend on the colors used by your template. Check the colors of your theme <a href="https://bootswatch.com/">here</a>. - “foreground” colors the navigation bar items, texts, and links - “search” includes a search bar, with values as “false” or “true” - “tools” can add buttons or other choices to navigate to sites (e.g.&nbsp;social media). If you turned on dark and light mode, the button for that will have appeared as a tool. Tools always show up on the right side of the navigation bar. - Many of the tools have an icon, which you can add with “icon” by specifying for example on of the icons from Bootstrap. Then you also want to add “href” with the link to be added to the icon. You can also create a pull-down menu from your icon, by adding an icon and a “menu” instead of the “href”. Then under “menu”, you can add “href” and “text” for additional links to add. However, note that the positioning of tools is not always good. I made a pull-down bar where part of the text went out of the page. This probably mean that the code for tools is not as well-made as the code for other attributes as “left” and “right”. I therefore suggest using “right” instead of “tools” always, to get around this problem. Everything is the same, just with “right” instead of “tools”.</p>
 <p>In the _quarto.yml file, you can change the margin on the pages. Add ” page-layout: article” under “format and html”. By default (if you don’t specify page-layout), it will use article, which leaves about 7 cm of white space on the right side of the screen when you open each page. You can change it to full, which makes the text use all of the page. If you are like me, you would like something in-between, you can remove the page-layout option and instead add “grid:” with the suboption “margin-width: 100px”. The higher the number, the more white space you will get on the right side of the screen. You can also customize the size of the other sizes under the grid attribute, such as “sidebar-width” (the navigation bar on the side), “body-width” (the size of the area with your main text), and “gutter-width” (the size between each area, such as the navigation bar,the body of the text, and the table of contents). If you start changing one of these options though, that will shift everything. So it is better to either just use “page-layout” or all of the four page options. This webpage uses the following values: ” grid: sidebar-width: 275px body-width: 2000px margin-width: 100px gutter-width: 1rem”</p>
 <p>Changing the title of the pages You can change the title of the qmd file in the yml header and this is then the title that will be displayed both in the navigation bar and on the webpage. If you for some reason want to display a different name in the navigation bar than on the page, you can change this in the navigation bar. So far, you have in your _quarto.yml document used a dash (-) and the file name to add to the navigation bar. If you want a different title, you can split an entry up and change for example “- about.qmd” to: “- text:”About” href: about.qmd”</p>
 <p>Changing the themes of the webpage Quarto has several built-in themes that you can use to change the colors and font of your webpage. You can see the built in options <a href="https://bootswatch.com/">here</a>. By default, Quarto uses Cosmo, but you can change that to any of the other themes. I have for example used the theme Flatly for this webpage. You can even have a webpage for light and one for dark mode. To do this, use the following code: “theme: light: flatly dark: darkly” This creates a toggle in your top nav bar where users can switch between dark and light mode.</p>

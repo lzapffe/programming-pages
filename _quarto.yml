@@ -6,6 +6,16 @@ website:
   title: "The Programming Pages"
   favicon: pics/logo/Binary_code.png
   navbar:
+    right:
+      - icon: github
+        menu:
+          - text: "GitHub repository"
+            href: https://github.com/lzapffe/programming-pages
+          - text: "Suggest improvements"
+            href: https://github.com/lzapffe/programming-pages/issues
+          - text: "Contact me"
+            icon: chat-text
+            href: contact.qmd
     left:
       - href: index.qmd
         text: Home
