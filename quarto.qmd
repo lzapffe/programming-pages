@@ -1,0 +1,12 @@
+---
+title: "Quarto"
+---
+
+# General
+
+To add an attribute for the code chunk, you add it after "#|" in the actual code part of the chunk. For example, to add echo = true to show the code in the output, you add a line in the main part of the code chunk with "#| echo: true". This differs from the way you do it in Rmarkdown, where you add "echo = true" in the curly brackets at the top of the code chunk.
+
+# Document Types
+You can save a Quarto document as several different file types. You can keep it as a standard document, but you can also specify that you want a PowerPoint, a webpage, or an ebook.
+
+You can also switch between some of these documents with the same content. For example, you can have a document with a pdf output and change it to powerpoint to convert it to a PowerPoint.

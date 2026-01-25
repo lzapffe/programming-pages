@@ -1,0 +1,231 @@
+---
+title: "Mermaid Graphs"
+---
+
+You can create diagrams by using mermaid and graphviz. These diagrams are easy to customize and edit and has a very professional look.
+
+Mermaid and Graphviz are their own programming "languages", so when writing code for these, you have to specify in the code chunk in Quarto that you are using a different programming language than R. You do this by writing "mermaid" or "dot" (for Graphviz) in the cruly brackets at the top of your code chunk.
+
+
+## Mermaid
+There are some limitations to Mermaid, especially for customizing the diagrams. You can for example not move nodes around.
+
+Comments are denoted with %%
+Cell options are denoted with %%| and have to be directly underneath the start of the diagram code chunk.
+
+With mermaid code, you start by specifying the type of chart you want, this could include: "flowchart", "sequenceDiagram", "pie", "sankey-beta", "gantt", "classDiagram", "gitGraph", "erDiagram", "journey", quadrantChart", and "xychart-beta"
+After the type of diagram, you can either leave it blank or add a space and specify the direction of the graph, for example "LR" for left to right or "TB" for top to bottom
+
+Then, press enter to get to a new line and tab to create an indent. Here you can start adding your elements and how they connects. This could for example be "Element1 --> Element2".
+You can create elements "inside" of your arrow between two other elements, such as "Element1 --in-between --> Element2"
+You can create "groups" of elements that can connect together by making subgraphs. This could for example be:
+"subgraph ElementGroup1
+  Element1
+end
+subgroup ElementGroup2
+  Element2
+end
+
+Element1 --> Element2"
+
+You can create multiple connections between elements:
+"Element1 --> Element2
+Element1 --> Element3"
+
+You can make the connections between elements have a dotted line instead of a straight line by adding a "." in the arrow. For example:
+Element1 -.-> Element2"
+
+You can add a title to the graph by adding "title This is my title" under the graph element
+
+### Flow charts
+
+
+
+Example graph:
+```{mermaid}
+%%| echo: true
+
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+
+
+### Sequence Diagrams
+
+Example:
+```{mermaid}
+%%| echo: true
+
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop HealthCheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+```
+
+
+### Pie charts
+
+You can add elements by using:
+""SliceA" : 5
+"SliceB" 15"
+
+Mermaid will then fill in the pie chart
+
+You can also create a title with "title My pie chart"
+
+
+### Class Diagram
+
+```{mermaid}
+%%| echo: true
+
+classDiagram
+Class01 <|-- AveryLongClass : Cool
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 --> C2 : Where am i?
+Class09 --* C3
+Class09 --|> Class07
+Class07 : equals()
+Class07 : Object[] elementData
+Class01 : size()
+Class01 : int chimp
+Class01 : int gorilla
+Class08 <--> C2: Cool label
+```
+
+
+
+### Gantt diagrams
+
+```{mermaid}
+%%| echo: true
+
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes weekdays 2014-01-10
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+```
+
+
+### Git Graph
+
+```{mermaid}
+%%| echo: true
+
+gitGraph
+       commit
+       commit
+       branch develop
+       commit
+       commit
+       commit
+       checkout main
+       commit
+       commit
+```
+
+
+### Entity relationships diagram
+
+```{mermaid}
+%%| echo: true
+
+erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+```
+
+
+### User journey diagram
+
+```{mermaid}
+%%| echo: true
+
+journey
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me
+```
+
+
+
+### Quadrant chart
+
+```{mermaid}
+%%| echo: true
+
+quadrantChart
+    title Reach and engagement of campaigns
+    x-axis Low Reach --> High Reach
+    y-axis Low Engagement --> High Engagement
+    quadrant-1 We should expand
+    quadrant-2 Need to promote
+    quadrant-3 Re-evaluate
+    quadrant-4 May be improved
+    Campaign A: [0.3, 0.6]
+    Campaign B: [0.45, 0.23]
+    Campaign C: [0.57, 0.69]
+    Campaign D: [0.78, 0.34]
+    Campaign E: [0.40, 0.34]
+    Campaign F: [0.35, 0.78]
+```
+
+
+### XY chart
+
+```{mermaid}
+%%| echo: true
+
+xychart-beta
+    title "Sales Revenue"
+    x-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
+    y-axis "Revenue (in $)" 4000 --> 11000
+    bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+    line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+```
+
+
+
+### Sankey diagrams (beta)
+
+"root1, branch1, 8
+root1, branch2, 2
+root1, branch3, 2"
+
+
+
+
+Sources:
+Quarto page on Mermaid and Graphviz - [Link](https://quarto.org/docs/authoring/diagrams.html)
+Intro video to Mermaid - [Link](https://www.youtube.com/watch?v=qGsQolMh9zE)
+- Types of Mermaid diagrams + example code - [Link](https://mermaid.js.org/intro/)
+
+
+To-do list:
+- Go over the "Get started" page for Mermaid to learn more about the syntax and different components - [Lin](https://mermaid.js.org/intro/getting-started.html)
+- Add instructions on how to use the online visual editor

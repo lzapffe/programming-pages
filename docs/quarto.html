@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Rmarkdown – The Programming Pages</title>
+<title>Quarto – The Programming Pages</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rmarkdown_basics.html">Rmarkdown and Quarto</a></li><li class="breadcrumb-item"><a href="./rmarkdown_basics.html">Rmarkdown</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rmarkdown_basics.html">Rmarkdown and Quarto</a></li><li class="breadcrumb-item"><a href="./quarto.html">Quarto</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -159,13 +159,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rmarkdown_basics.html" class="sidebar-item-text sidebar-link active">
+  <a href="./rmarkdown_basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Rmarkdown</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Quarto</span></a>
   </div>
 </li>
@@ -257,15 +257,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general">General</a></li>
+  <li><a href="#document-types" id="toc-document-types" class="nav-link" data-scroll-target="#document-types">Document Types</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rmarkdown_basics.html">Rmarkdown and Quarto</a></li><li class="breadcrumb-item"><a href="./rmarkdown_basics.html">Rmarkdown</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rmarkdown_basics.html">Rmarkdown and Quarto</a></li><li class="breadcrumb-item"><a href="./quarto.html">Quarto</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Rmarkdown</h1>
+<h1 class="title">Quarto</h1>
 </div>
 
 
@@ -282,10 +289,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This should be a general page for using Rmarkdown, but for now, I will also list interesting things to add more subpages about.</p>
-<p>Interesting things to add more subpages about: - <a href="https://bookdown.org/yihui/rmarkdown/parameterized-reports.html">Parameterized reports</a></p>
+<section id="general" class="level1">
+<h1>General</h1>
+<p>To add an attribute for the code chunk, you add it after “#|” in the actual code part of the chunk. For example, to add echo = true to show the code in the output, you add a line in the main part of the code chunk with “#| echo: true”. This differs from the way you do it in Rmarkdown, where you add “echo = true” in the curly brackets at the top of the code chunk.</p>
+</section>
+<section id="document-types" class="level1">
+<h1>Document Types</h1>
+<p>You can save a Quarto document as several different file types. You can keep it as a standard document, but you can also specify that you want a PowerPoint, a webpage, or an ebook.</p>
+<p>You can also switch between some of these documents with the same content. For example, you can have a document with a pdf output and change it to powerpoint to convert it to a PowerPoint.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

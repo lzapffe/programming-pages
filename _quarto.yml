@@ -24,9 +24,10 @@ website:
   sidebar:
     style: "floating"
     contents:
-      - section: "Rmarkdown"
+      - section: "Rmarkdown and Quarto"
         contents:
           - rmarkdown_basics.qmd
+          - quarto.qmd
       - section: "Creating your own web page"
         contents:
          - make_web_page.qmd
@@ -34,6 +35,10 @@ website:
          - customize_webpage.qmd
          - track_webpage.qmd
          - troubleshooting.qmd
+      - section: "Graphs and Diagrams"
+        contents:
+         - mermaid.qmd
+         - graphviz.qmd
       - section: "Miscallenous"
         contents:
           - cool_things.qmd

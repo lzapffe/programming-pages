@@ -19,8 +19,32 @@
     "text": "This should be a general page for using Rmarkdown, but for now, I will also list interesting things to add more subpages about.\nInteresting things to add more subpages about: - Parameterized reports",
     "crumbs": [
       "Home",
-      "Rmarkdown",
+      "Rmarkdown and Quarto",
       "Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "mermaid.html",
+    "href": "mermaid.html",
+    "title": "Mermaid Graphs",
+    "section": "",
+    "text": "You can create diagrams by using mermaid and graphviz. These diagrams are easy to customize and edit and has a very professional look.\nMermaid and Graphviz are their own programming “languages”, so when writing code for these, you have to specify in the code chunk in Quarto that you are using a different programming language than R. You do this by writing “mermaid” or “dot” (for Graphviz) in the cruly brackets at the top of your code chunk.",
+    "crumbs": [
+      "Home",
+      "Graphs and Diagrams",
+      "Mermaid Graphs"
+    ]
+  },
+  {
+    "objectID": "mermaid.html#mermaid",
+    "href": "mermaid.html#mermaid",
+    "title": "Mermaid Graphs",
+    "section": "Mermaid",
+    "text": "Mermaid\nThere are some limitations to Mermaid, especially for customizing the diagrams. You can for example not move nodes around.\nComments are denoted with %% Cell options are denoted with %%| and have to be directly underneath the start of the diagram code chunk.\nWith mermaid code, you start by specifying the type of chart you want, this could include: “flowchart”, “sequenceDiagram”, “pie”, “sankey-beta”, “gantt”, “classDiagram”, “gitGraph”, “erDiagram”, “journey”, quadrantChart”, and “xychart-beta” After the type of diagram, you can either leave it blank or add a space and specify the direction of the graph, for example “LR” for left to right or “TB” for top to bottom\nThen, press enter to get to a new line and tab to create an indent. Here you can start adding your elements and how they connects. This could for example be “Element1 –&gt; Element2”. You can create elements “inside” of your arrow between two other elements, such as “Element1 –in-between –&gt; Element2” You can create “groups” of elements that can connect together by making subgraphs. This could for example be: “subgraph ElementGroup1 Element1 end subgroup ElementGroup2 Element2 end\nElement1 –&gt; Element2”\nYou can create multiple connections between elements: “Element1 –&gt; Element2 Element1 –&gt; Element3”\nYou can make the connections between elements have a dotted line instead of a straight line by adding a “.” in the arrow. For example: Element1 -.-&gt; Element2”\nYou can add a title to the graph by adding “title This is my title” under the graph element\n\nFlow charts\nExample graph:\n\ngraph TD;\n    A--&gt;B;\n    A--&gt;C;\n    B--&gt;D;\n    C--&gt;D;\n\n\n\n\ngraph TD;\n    A--&gt;B;\n    A--&gt;C;\n    B--&gt;D;\n    C--&gt;D;\n\n\n\n\n\n\n\n\nSequence Diagrams\nExample:\n\nsequenceDiagram\n    participant Alice\n    participant Bob\n    Alice-&gt;&gt;John: Hello John, how are you?\n    loop HealthCheck\n        John-&gt;&gt;John: Fight against hypochondria\n    end\n    Note right of John: Rational thoughts &lt;br/&gt;prevail!\n    John--&gt;&gt;Alice: Great!\n    John-&gt;&gt;Bob: How about you?\n    Bob--&gt;&gt;John: Jolly good!\n\n\n\n\nsequenceDiagram\n    participant Alice\n    participant Bob\n    Alice-&gt;&gt;John: Hello John, how are you?\n    loop HealthCheck\n        John-&gt;&gt;John: Fight against hypochondria\n    end\n    Note right of John: Rational thoughts &lt;br/&gt;prevail!\n    John--&gt;&gt;Alice: Great!\n    John-&gt;&gt;Bob: How about you?\n    Bob--&gt;&gt;John: Jolly good!\n\n\n\n\n\n\n\n\nPie charts\nYou can add elements by using: ““SliceA” : 5 “SliceB” 15”\nMermaid will then fill in the pie chart\nYou can also create a title with “title My pie chart”\n\n\nClass Diagram\n\nclassDiagram\nClass01 &lt;|-- AveryLongClass : Cool\nClass03 *-- Class04\nClass05 o-- Class06\nClass07 .. Class08\nClass09 --&gt; C2 : Where am i?\nClass09 --* C3\nClass09 --|&gt; Class07\nClass07 : equals()\nClass07 : Object[] elementData\nClass01 : size()\nClass01 : int chimp\nClass01 : int gorilla\nClass08 &lt;--&gt; C2: Cool label\n\n\n\n\nclassDiagram\nClass01 &lt;|-- AveryLongClass : Cool\nClass03 *-- Class04\nClass05 o-- Class06\nClass07 .. Class08\nClass09 --&gt; C2 : Where am i?\nClass09 --* C3\nClass09 --|&gt; Class07\nClass07 : equals()\nClass07 : Object[] elementData\nClass01 : size()\nClass01 : int chimp\nClass01 : int gorilla\nClass08 &lt;--&gt; C2: Cool label\n\n\n\n\n\n\n\n\nGantt diagrams\n\ngantt\ndateFormat  YYYY-MM-DD\ntitle Adding GANTT diagram to mermaid\nexcludes weekdays 2014-01-10\n\nsection A section\nCompleted task            :done,    des1, 2014-01-06,2014-01-08\nActive task               :active,  des2, 2014-01-09, 3d\nFuture task               :         des3, after des2, 5d\nFuture task2               :         des4, after des3, 5d\n\n\n\n\ngantt\ndateFormat  YYYY-MM-DD\ntitle Adding GANTT diagram to mermaid\nexcludes weekdays 2014-01-10\n\nsection A section\nCompleted task            :done,    des1, 2014-01-06,2014-01-08\nActive task               :active,  des2, 2014-01-09, 3d\nFuture task               :         des3, after des2, 5d\nFuture task2               :         des4, after des3, 5d\n\n\n\n\n\n\n\n\nGit Graph\n\ngitGraph\n       commit\n       commit\n       branch develop\n       commit\n       commit\n       commit\n       checkout main\n       commit\n       commit\n\n\n\n\ngitGraph\n       commit\n       commit\n       branch develop\n       commit\n       commit\n       commit\n       checkout main\n       commit\n       commit\n\n\n\n\n\n\n\n\nEntity relationships diagram\n\nerDiagram\n    CUSTOMER ||--o{ ORDER : places\n    ORDER ||--|{ LINE-ITEM : contains\n    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses\n\n\n\n\nerDiagram\n    CUSTOMER ||--o{ ORDER : places\n    ORDER ||--|{ LINE-ITEM : contains\n    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses\n\n\n\n\n\n\n\n\nUser journey diagram\n\njourney\n    title My working day\n    section Go to work\n      Make tea: 5: Me\n      Go upstairs: 3: Me\n      Do work: 1: Me, Cat\n    section Go home\n      Go downstairs: 5: Me\n      Sit down: 5: Me\n\n\n\n\njourney\n    title My working day\n    section Go to work\n      Make tea: 5: Me\n      Go upstairs: 3: Me\n      Do work: 1: Me, Cat\n    section Go home\n      Go downstairs: 5: Me\n      Sit down: 5: Me\n\n\n\n\n\n\n\n\nQuadrant chart\n\nquadrantChart\n    title Reach and engagement of campaigns\n    x-axis Low Reach --&gt; High Reach\n    y-axis Low Engagement --&gt; High Engagement\n    quadrant-1 We should expand\n    quadrant-2 Need to promote\n    quadrant-3 Re-evaluate\n    quadrant-4 May be improved\n    Campaign A: [0.3, 0.6]\n    Campaign B: [0.45, 0.23]\n    Campaign C: [0.57, 0.69]\n    Campaign D: [0.78, 0.34]\n    Campaign E: [0.40, 0.34]\n    Campaign F: [0.35, 0.78]\n\n\n\n\nquadrantChart\n    title Reach and engagement of campaigns\n    x-axis Low Reach --&gt; High Reach\n    y-axis Low Engagement --&gt; High Engagement\n    quadrant-1 We should expand\n    quadrant-2 Need to promote\n    quadrant-3 Re-evaluate\n    quadrant-4 May be improved\n    Campaign A: [0.3, 0.6]\n    Campaign B: [0.45, 0.23]\n    Campaign C: [0.57, 0.69]\n    Campaign D: [0.78, 0.34]\n    Campaign E: [0.40, 0.34]\n    Campaign F: [0.35, 0.78]\n\n\n\n\n\n\n\n\nXY chart\n\nxychart-beta\n    title \"Sales Revenue\"\n    x-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]\n    y-axis \"Revenue (in $)\" 4000 --&gt; 11000\n    bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]\n    line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]\n\n\n\n\nxychart-beta\n    title \"Sales Revenue\"\n    x-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]\n    y-axis \"Revenue (in $)\" 4000 --&gt; 11000\n    bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]\n    line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]\n\n\n\n\n\n\n\n\nSankey diagrams (beta)\n“root1, branch1, 8 root1, branch2, 2 root1, branch3, 2”\nSources: Quarto page on Mermaid and Graphviz - Link Intro video to Mermaid - Link - Types of Mermaid diagrams + example code - Link\nTo-do list: - Go over the “Get started” page for Mermaid to learn more about the syntax and different components - Lin - Add instructions on how to use the online visual editor",
+    "crumbs": [
+      "Home",
+      "Graphs and Diagrams",
+      "Mermaid Graphs"
     ]
   },
   {
@@ -29,44 +53,6 @@
     "title": "test-webpage",
     "section": "",
     "text": "Making some necessary changes to this page…"
-  },
-  {
-    "objectID": "cool_things.html",
-    "href": "cool_things.html",
-    "title": "Cool Things to Check Out for Later",
-    "section": "",
-    "text": "There are endless opportunities of things to discover and learn with programming. The following section lists some of the interesting things I have seen that I would like to learn more about or that I did maybe not fit in anywhere else on my page.\n\nThe package learnr to make interactive documents to teach R programming or other concepts. You can for example have them code within the document. See their webpage and especially their example “Summarizing data”. Link. There is also an e-book with some instructions on learnr\nShiny documents. This is from an ebook on Rmarkdown. This is an intro course in building shiny apps",
-    "crumbs": [
-      "Home",
-      "Miscallenous",
-      "Cool Things to Check Out for Later"
-    ]
-  },
-  {
-    "objectID": "add_pages.html",
-    "href": "add_pages.html",
-    "title": "Adding Pages",
-    "section": "",
-    "text": "Now that you have a web page, the next step is to add some pages to your web page. This can easily be done by creating a new quarto document (.qmd file). Add some text and the content you want to the page and save it.\nThen, to add the page to your webpage, you need to tell Quarto where you want the page featured. You can do this in the “_quarto.yml” file. Under “website”, you can see that it already has the text: “navbar: left: - href: index.qmd text: Home - about.qmd” This text tells Quarto to make a navigation bar, which you can already see on your webpage at the top. There should be two tabs, one called “Home” and one called “About”. The above code has added these two pages to the webpage, by mapping them to the navigation bar at the top, as its one tab. You can add another tab by adding another line under “about.qmd” on the same indent level and write “-”, a space, and the name of the qmd file you created. If you now save the “_quarto.yml” file and render the website from the build tab, you will see that your page has appeared as another tab.",
-    "crumbs": [
-      "Home",
-      "Creating your own web page",
-      "Adding Pages"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Next steps: I was going over the basic Quarto pages and customizing the layout of the page.\nlong-term to do list: - Create an email for people to reach out to on the contact page - Create a more appealing logo"
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact me",
-    "section": "",
-    "text": "If you want to get in touch, you can reach out to me by email, at XXXXX.\nYou can also"
   },
   {
     "objectID": "customize_webpage.html",
@@ -81,6 +67,56 @@
     ]
   },
   {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact me",
+    "section": "",
+    "text": "If you want to get in touch, you can reach out to me by email, at XXXXX.\nYou can also"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Next steps: I was going over the basic Quarto pages and customizing the layout of the page.\nlong-term to do list: - Create an email for people to reach out to on the contact page - Create a more appealing logo"
+  },
+  {
+    "objectID": "add_pages.html",
+    "href": "add_pages.html",
+    "title": "Adding Pages",
+    "section": "",
+    "text": "Now that you have a web page, the next step is to add some pages to your web page. This can easily be done by creating a new quarto document (.qmd file). Add some text and the content you want to the page and save it.\nThen, to add the page to your webpage, you need to tell Quarto where you want the page featured. You can do this in the “_quarto.yml” file. Under “website”, you can see that it already has the text: “navbar: left: - href: index.qmd text: Home - about.qmd” This text tells Quarto to make a navigation bar, which you can already see on your webpage at the top. There should be two tabs, one called “Home” and one called “About”. The above code has added these two pages to the webpage, by mapping them to the navigation bar at the top, as its one tab. You can add another tab by adding another line under “about.qmd” on the same indent level and write “-”, a space, and the name of the qmd file you created. If you now save the “_quarto.yml” file and render the website from the build tab, you will see that your page has appeared as another tab.",
+    "crumbs": [
+      "Home",
+      "Creating your own web page",
+      "Adding Pages"
+    ]
+  },
+  {
+    "objectID": "cool_things.html",
+    "href": "cool_things.html",
+    "title": "Cool Things to Check Out for Later",
+    "section": "",
+    "text": "There are endless opportunities of things to discover and learn with programming. The following section lists some of the interesting things I have seen that I would like to learn more about or that I did maybe not fit in anywhere else on my page.\n\nThe package learnr to make interactive documents to teach R programming or other concepts. You can for example have them code within the document. See their webpage and especially their example “Summarizing data”. Link. There is also an e-book with some instructions on learnr\nShiny documents. This is from an ebook on Rmarkdown. This is an intro course in building shiny apps",
+    "crumbs": [
+      "Home",
+      "Miscallenous",
+      "Cool Things to Check Out for Later"
+    ]
+  },
+  {
+    "objectID": "graphviz.html",
+    "href": "graphviz.html",
+    "title": "Graphviz",
+    "section": "",
+    "text": "Check info about Graphviz\nTo-do list: - Read about Graphviz in Quarto on the Quarto webpage - Link - Read more about Graphviz and how to make diagrams with it",
+    "crumbs": [
+      "Home",
+      "Graphs and Diagrams",
+      "Graphviz"
+    ]
+  },
+  {
     "objectID": "make_web_page.html",
     "href": "make_web_page.html",
     "title": "Making the Webpage",
@@ -90,6 +126,18 @@
       "Home",
       "Creating your own web page",
       "Making the Webpage"
+    ]
+  },
+  {
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "Quarto",
+    "section": "",
+    "text": "General\nTo add an attribute for the code chunk, you add it after “#|” in the actual code part of the chunk. For example, to add echo = true to show the code in the output, you add a line in the main part of the code chunk with “#| echo: true”. This differs from the way you do it in Rmarkdown, where you add “echo = true” in the curly brackets at the top of the code chunk.\n\n\nDocument Types\nYou can save a Quarto document as several different file types. You can keep it as a standard document, but you can also specify that you want a PowerPoint, a webpage, or an ebook.\nYou can also switch between some of these documents with the same content. For example, you can have a document with a pdf output and change it to powerpoint to convert it to a PowerPoint.",
+    "crumbs": [
+      "Home",
+      "Rmarkdown and Quarto",
+      "Quarto"
     ]
   },
   {

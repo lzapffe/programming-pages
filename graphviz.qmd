@@ -1,0 +1,12 @@
+---
+title: "Graphviz"
+---
+
+
+Check info about Graphviz
+
+
+
+To-do list:
+- Read about Graphviz in Quarto on the Quarto webpage - [Link](https://quarto.org/docs/authoring/diagrams.html#graphviz)
+- Read more about Graphviz and how to make diagrams with it
