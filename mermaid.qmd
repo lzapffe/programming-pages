@@ -218,6 +218,15 @@ root1, branch2, 2
 root1, branch3, 2"
 
 
+## Help for Mermaid diagrams
+
+There are several ways in which you can use and write Mermaid code:
+- You can write it directly into Quarto, like we have done above
+- You can use the [Live Mermaid Editor](https://mermaid.live) where you can write the code and see the changes in real time. This saves you time from rendering the document in Quarto
+- You can use their AI tool [mermaid.ai](https://mermaid.ai/) to create the code and diagrams. Note that this requires an account and has a limit to the services they offer for free
+- They also have several [plug-ins](https://mermaid.ai/plugins) that you can use. There is for example one there with ChatGPT that allows for using AI to build some of the diagrams.
+
+
 
 
 Sources:
@@ -227,5 +236,5 @@ Intro video to Mermaid - [Link](https://www.youtube.com/watch?v=qGsQolMh9zE)
 
 
 To-do list:
-- Go over the "Get started" page for Mermaid to learn more about the syntax and different components - [Lin](https://mermaid.js.org/intro/getting-started.html)
+- Go over the "Syntax and Configuration" page for Mermaid to learn more about the syntax and different components - [Lin](https://mermaid.js.org/intro/syntax-reference.html)
 - Add instructions on how to use the online visual editor

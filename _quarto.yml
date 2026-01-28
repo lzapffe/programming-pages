@@ -39,6 +39,7 @@ website:
         contents:
          - mermaid.qmd
          - graphviz.qmd
+      - section: "Version Control with Git"
       - section: "Miscallenous"
         contents:
           - cool_things.qmd
